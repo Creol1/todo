@@ -3,6 +3,6 @@ import Body from '../components/Body'
 
 export default async function Home() {
   return (
-        <Body props={'..api/completed'}/>
+        <Body props={'../api/completed'}/>
   )
 }
