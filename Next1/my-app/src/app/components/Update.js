@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 
 
 const UpdateButton = ({id,status1,url}) => {
+
     const [status, setStatus] = useState('')
     const newstatus = {status};
     const url1 = Object.values(url)[0];
+
     const handleUpdate = (id, url1) => {  
-        fetch(url1 + '?id=' + q, {
+        fetch(url1 + '?id=' + id, {
             method: 'PATCH',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newstatus),
