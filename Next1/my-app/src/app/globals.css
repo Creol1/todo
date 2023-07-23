@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.link {
+    @apply flex text-base hover:bg-gray-50 hover:border-b-2 hover:border-red-500 w-screen h-10 items-center pointer-events-auto 
+}
+
+.label {
+    @apply font-semibold text-base pt-7 pl-3 items-center
+}
+
+.input {
+    @apply mx-3 rounded-md pl-2 mt-2 hover:border-2 hover:border-purple-400 focus:border-2 focus:border-purple-400 focus:right-1 focus:outline-none
+}
