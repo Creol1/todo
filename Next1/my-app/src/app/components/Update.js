@@ -14,6 +14,7 @@ const UpdateButton = ({id,status1,url}) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newstatus),
           }).then(() => {
+            console.log(url1)
             alert('item updated')
             window.location.reload()
           })
