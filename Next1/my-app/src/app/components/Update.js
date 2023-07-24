@@ -13,7 +13,6 @@ const UpdateButton = ({id, status1, url}) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newstatus),
           }).then(() => {
-            console.log(url)
             alert('item updated')
             window.location.reload()
           })
@@ -24,7 +23,7 @@ const UpdateButton = ({id, status1, url}) => {
             setStatus('uncompleted')
         } else {
             setStatus('completed')
-        } 
+        } console.log(url)
     },[])
 
     return ( 
