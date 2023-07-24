@@ -9,7 +9,6 @@ import UpdateButton from './Update'
 async function getTasks(props) {
   const url = await Object.values(props)[0];
   const url1 = await Object.values(url)[0];
-  console.log(url1)
   const res = await fetch(url1)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -47,7 +46,7 @@ const Tasks = async (props) => {
             <div className='flex justify-between mt-16 ml-4 mr-4'>
               <UpdateButton id={item._id} status1={item.status} url={url1}></UpdateButton>
               <button onClick={() => handleDelete(url1, item._id)}> <Image src={bin} width={30} height={30} /> </button>
-              <TaskButton props={item._id} url={url1}></TaskButton>
+              <TaskButton url={url1} id={item._id} ></TaskButton>
             </div>
 
         </div>)}

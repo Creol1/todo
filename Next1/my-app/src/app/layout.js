@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="grid grid-cols-6"> 
-      <Header />
+      <Header props='./api/tasks'/>
       <main className="col-span-4 border-2 bg-gray-300">{children}</main>
       <Footer />
       </ body>

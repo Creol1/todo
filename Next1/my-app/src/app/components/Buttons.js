@@ -5,7 +5,7 @@ import dots from '../../../img/dots.svg'
 import add from '../../../img/add.svg'
 
 
-const TaskButton = (props, url) => {
+const TaskButton = ( { url ,  id } ) => {
     const [show, setShow] = useState(false);
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
@@ -19,11 +19,9 @@ const TaskButton = (props, url) => {
     const [width, setWidth] = useState(70);
     const [height, setHeight] = useState(70);
     const [w, setW] = useState('Add new');
-    const id = Object.values(props)[0];
-
     
-      const handleClickOpen = () => {
-        setShow(true)};
+    const handleClickOpen = () => {
+      setShow(true)};
 
    
     const ref = useRef()
@@ -43,7 +41,7 @@ const TaskButton = (props, url) => {
       }
     }, [show]); 
  
-   const handleSubmit = (id, url) => {
+   const handleSubmit = (url, id) => {
       if (id === undefined){
       fetch(url, {
           method: 'POST',
@@ -80,7 +78,7 @@ const TaskButton = (props, url) => {
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50" >
               <div className='h-2/3 w-1/3 border-2 border-red-300 bg-gray-300' ref={ref}>
               <h1 className='text-xl font-semibold pt-2 pl-3 text-center'>{w} task</h1>
-              <form className='flex flex-col' onSubmit={() => handleSubmit(id)}>
+              <form className='flex flex-col' onSubmit={() => handleSubmit(url, id)}>
                 <div className='flex flex-col'>
                   <label className='label'>Task name</label>
                   <input
