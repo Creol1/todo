@@ -14,7 +14,7 @@ const Body = (props) => {
         <div className="h-screen relative">
             <nav className="flex h-20 items-center justify-between border-b-2 ml-5 mr-5">
                 <Date />
-                <TaskButton />
+                <TaskButton url={props}/>
             </nav>
                 <Tasks props={props}/>
         </div>

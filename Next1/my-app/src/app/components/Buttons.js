@@ -5,7 +5,7 @@ import dots from '../../../img/dots.svg'
 import add from '../../../img/add.svg'
 
 
-const TaskButton = (props) => {
+const TaskButton = (props, url) => {
     const [show, setShow] = useState(false);
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
@@ -43,9 +43,9 @@ const TaskButton = (props) => {
       }
     }, [show]); 
  
-   const handleSubmit = (id) => {
+   const handleSubmit = (id, url) => {
       if (id === undefined){
-      fetch('http://localhost:3000/api/tasks', {
+      fetch(url, {
           method: 'POST',
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(task)
@@ -53,7 +53,7 @@ const TaskButton = (props) => {
           alert('new items created');
       })
   } else {
-    fetch(`http://localhost:3000/api/tasks?id=` + id, {
+    fetch(url + '?id=' + id, {
           method: 'PATCH',
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(task),

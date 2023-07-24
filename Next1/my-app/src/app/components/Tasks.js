@@ -47,7 +47,7 @@ const Tasks = async (props) => {
             <div className='flex justify-between mt-16 ml-4 mr-4'>
               <UpdateButton id={item._id} status1={item.status} url={url1}></UpdateButton>
               <button onClick={() => handleDelete(url1, item._id)}> <Image src={bin} width={30} height={30} /> </button>
-              <TaskButton props={item._id}></TaskButton>
+              <TaskButton props={item._id} url={url1}></TaskButton>
             </div>
 
         </div>)}
